@@ -1,100 +1,198 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Login Page</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
-        
-        h1 {
-            text-align: center;
-            color: #f0af23ec; 
-        }
-        
-        form {
-            width: 300px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .fields {
-            width: 93%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        
-        #submitBtn {
-            width: 100%;
-            padding: 10px;
-            background-color: #f0af23ec; 
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        
-        #submitBtn:hover {
-            background-color: #8d6819ec;
-            transform: scale(1.03);
-        }
-        #error{
-            color: red;
-            display: none;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      h1 {
+        text-align: center;
+        color: #f0af23ec;
+      }
+
+      #form {
+        width: 300px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .fields {
+        width: 93%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      #submitBtn {
+        width: 100%;
+        padding: 10px;
+        background-color: #f0af23ec;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      #submitBtn:hover {
+        background-color: #8d6819ec;
+        transform: scale(1.03);
+      }
+      #error {
+        color: red;
+        display: none;
+      }
+      #LoginBtn {
+        color: #000000;
+        cursor: pointer;
+        padding: 10px;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #000000;
+      }
+      #signUpBtn {
+        padding: 10px;
+        color: #4e4e4eec;
+        cursor: pointer;
+      }
+      #slider {
+        padding: 10px;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #4e4e4eec;
+      }
     </style>
     <script src="js/jquery-3.7.1.min.js"></script>
-</head>
-<body>
-    <h1 onclick=" window.location.href = 'home.html';">FCIH Login</h1>
-    
-    <form id="Login">
+  </head>
+  <body>
+    <h1 style="cursor: pointer" onclick=" window.location.href = 'home.html';">
+      FCIH Login
+    </h1>
+    <div id="form">
+      <div id="slider">
+        <span id="signUpBtn">Sign Up&nbsp;&nbsp;</span>
+        <span id="LoginBtn">Login</span><br />
+      </div>
+      <br />
+      <form id="signUp" hidden>
+        <laber>name:</laber>
+        <input
+          type="text"
+          class="fields"
+          id="name"
+          name="name"
+          required
+        /><br /><br />
         <label for="username">Email or Phone:</label>
-        <input type="text" class = "fields" id="username" name="username" required><br><br>
-        <label id="error"  >the username or password is not correct </label><br>
-        
+        <input
+          type="text"
+          class="fields"
+          id="username"
+          name="username"
+          required
+        /><br /><br />
+        <label id="error">the username or password is not correct </label><br />
+
         <label for="password">Password:</label>
-        <input type="password" class = "fields" id="password" name="password" required><br><br>
-        
-        <input type="submit" id="submitBtn" value="Log In">
-    </form>
+        <input
+          type="password"
+          class="fields"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+
+        <input type="submit" id="submitBtn" value="Sign Up" />
+      </form>
+
+      <form id="Login">
+        <label for="username">Email or Phone:</label>
+        <input
+          type="text"
+          class="fields"
+          id="username"
+          name="username"
+          required
+        /><br /><br />
+        <label id="error">the username or password is not correct </label><br />
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          class="fields"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+
+        <input type="submit" id="submitBtn" value="Log In" />
+      </form>
+    </div>
     <script>
-        $(document).ready(function() {
-            
-            if (document.cookie == "username=admin") {
-                window.location.href = "home.html";
-            }
-            $('#Login').submit(function(event) {
-                event.preventDefault(); // Prevent form submission
-                
-                // Perform form validation here
-                var username = $('#username').val();
-                var password = $('#password').val();
-
-                if (username === 'admin' && password === 'admin') {
-                    document.cookie = "username="+username+"; path=/"; 
-                    window.location.href = "home.html";
-                    
-                }else{
-                    $('#error').show();
-                }
-
-                // If form is valid, submit the form
-                // You can add your form submission logic here
-               
-            });
+      $(document).ready(function () {
+        $("#signUpBtn").click(function () {
+          $("#signUp").show();
+          $("#Login").hide();
+          $("#LoginBtn").css("color", "#4e4e4eec");
+          $("#LoginBtn").css("border-bottom", "none");
+          this.style.color = "#000000";
+          this.style.borderBottomColor = "#000000";
+          this.style.borderBottomWidth = "1px";
+          this.style.borderBottomStyle = "solid";
         });
+        $("#LoginBtn").click(function () {
+          $("#signUp").hide();
+          $("#Login").show();
+          $("#signUpBtn").css("color", "#4e4e4eec");
+          $("#signUpBtn").css("border-bottom", "none");
+          this.style.color = "#000000";
+          this.style.borderBottomColor = "#000000";
+          this.style.borderBottomWidth = "1px";
+          this.style.borderBottomStyle = "solid";
+        });
+
+        $("#signUp").submit(function (event) {
+          event.preventDefault(); // Prevent form submission
+          // Perform form validation here
+          var name = $("#name").val();
+          var username = $("#username").val();
+          var password = $("#password").val();
+          if (name != "" && username != "" && password != "") {
+            window.location.href = "home.html";
+          } else {
+            $("#error").show();
+          }
+          // If form is valid, submit the form
+          // You can add your form submission logic here
+        });
+        $("#Login").submit(function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          // Perform form validation here
+          var username = $("#username").val();
+          var password = $("#password").val();
+
+          if (username != "" && password != "") {
+            window.location.href = "home.html";
+          } else {
+            $("#error").show();
+          }
+
+          // If form is valid, submit the form
+          // You can add your form submission logic here
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
