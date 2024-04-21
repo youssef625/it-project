@@ -1,9 +1,0 @@
-<section class="products">
-        <article class="card">
-            <img src="./RedStore_Img/images/1.jpg" alt="">
-            <h1 class="tital">product tistal </h1>
-            <p class="discrption">any any any any </p>
-            <div class="price">10$</div>
-            <button class="addtocart">add to cart</button>
-        </article>
-    </section>
