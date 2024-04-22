@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Login Page</title>
+    <title>Log In</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -35,21 +35,21 @@
         border-radius: 3px;
       }
 
-      #submitBtn {
+      .submitBtn {
         width: 100%;
         padding: 10px;
-        background-color: #f0af23ec;
+        background-color: #000000ec;
         color: #fff;
         border: none;
         border-radius: 3px;
         cursor: pointer;
       }
 
-      #submitBtn:hover {
-        background-color: #8d6819ec;
+      .submitBtn:hover {
+        background-color: #363636ec;
         transform: scale(1.03);
       }
-      #error {
+      .error {
         color: red;
         display: none;
       }
@@ -73,7 +73,6 @@
         border-bottom-color: #4e4e4eec;
       }
     </style>
-    <script src="js/jquery-3.7.1.min.js"></script>
   </head>
   <body>
     <h1 style="cursor: pointer" onclick=" window.location.href = 'home.html';">
@@ -87,33 +86,20 @@
       <br />
       <form id="signUp" hidden>
         <laber>name:</laber>
-        <input
-          type="text"
-          class="fields"
-          id="name"
-          name="name"
-          required
-        /><br /><br />
-        <label for="username">Email or Phone:</label>
-        <input
-          type="text"
-          class="fields"
-          id="username"
-          name="username"
-          required
-        /><br /><br />
-        <label id="error">the username or password is not correct </label><br />
+        <input type="text" class="fields" id="name" name="name" /><br /><br />
+        <label>Email:</label>
+        <input type="text" class="fields" id="username" name="username" /><br />
+        <label class="error" id="EmailError"
+          >the username or password is not correct </label
+        ><br />
 
-        <label for="password">Password:</label>
-        <input
-          type="password"
-          class="fields"
-          id="password"
-          name="password"
-          required
-        /><br /><br />
+        <label>Password:</label>
+        <input type="password" class="fields" id="password" name="password" />
+        <label class="error" id="EmailError"
+          >the username or password is not correct </label
+        ><br />
 
-        <input type="submit" id="submitBtn" value="Sign Up" />
+        <input type="submit" class="submitBtn" value="Sign Up" />
       </form>
 
       <form id="Login">
@@ -123,9 +109,7 @@
           class="fields"
           id="username"
           name="username"
-          required
         /><br /><br />
-        <label id="error">the username or password is not correct </label><br />
 
         <label for="password">Password:</label>
         <input
@@ -133,13 +117,31 @@
           class="fields"
           id="password"
           name="password"
-          required
-        /><br /><br />
+        /><br /><br /><label class="error" id="LoginError"> </label><br />
 
-        <input type="submit" id="submitBtn" value="Log In" />
+        <input type="submit" class="submitBtn" value="Log In" />
       </form>
     </div>
+    <script src="js/jquery-3.7.1.min.js"></script>
     <script>
+      function emailValidation(email) {
+        let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if (email.match(pattern)) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      function passwordValidation(password) {
+        let pattern =
+          /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.{8,})$/;
+
+        if (password.match(pattern)) {
+        } else {
+        }
+      }
+
       $(document).ready(function () {
         $("#signUpBtn").click(function () {
           $("#signUp").show();
@@ -150,6 +152,8 @@
           this.style.borderBottomColor = "#000000";
           this.style.borderBottomWidth = "1px";
           this.style.borderBottomStyle = "solid";
+
+          document.title = "Sign Up";
         });
         $("#LoginBtn").click(function () {
           $("#signUp").hide();
@@ -160,6 +164,8 @@
           this.style.borderBottomColor = "#000000";
           this.style.borderBottomWidth = "1px";
           this.style.borderBottomStyle = "solid";
+
+          document.title = "Log In";
         });
 
         $("#signUp").submit(function (event) {
@@ -173,24 +179,31 @@
           } else {
             $("#error").show();
           }
-          // If form is valid, submit the form
-          // You can add your form submission logic here
         });
         $("#Login").submit(function (event) {
-          event.preventDefault(); // Prevent form submission
+          event.preventDefault();
+          var username = $("#Login #username").val();
+          var password = $("#Login #password").val();
 
-          // Perform form validation here
-          var username = $("#username").val();
-          var password = $("#password").val();
-
-          if (username != "" && password != "") {
-            window.location.href = "home.html";
+          if (username === "" && password === "") {
+            $("#LoginError").empty();
+            $("#LoginError").append("Enter an email and a password");
+            $("#LoginError").show();
+          } else if (username === "") {
+            $("#LoginError").empty();
+            $("#LoginError").append("Enter an email");
+            $("#LoginError").show();
+          } else if (!emailValidation(username)) {
+            $("#LoginError").empty();
+            $("#LoginError").append("Enter a valid email");
+            $("#LoginError").show();
+          } else if (password === "") {
+            $("#LoginError").empty();
+            $("#LoginError").append("Enter a password");
+            $("#LoginError").show();
           } else {
-            $("#error").show();
+            window.location.href = "home.html";
           }
-
-          // If form is valid, submit the form
-          // You can add your form submission logic here
         });
       });
     </script>
