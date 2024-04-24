@@ -2,82 +2,26 @@
 <html>
   <head>
     <title>Log In</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-      }
-
-      h1 {
-        text-align: center;
-        color: #f0af23ec;
-      }
-
-      #form {
-        width: 300px;
-        margin: 0 auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      label {
-        display: block;
-        margin-bottom: 10px;
-        color: #333;
-      }
-
-      .fields {
-        width: 93%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-      }
-
-      .submitBtn {
-        width: 100%;
-        padding: 10px;
-        background-color: #000000ec;
-        color: #fff;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-      }
-
-      .submitBtn:hover {
-        background-color: #363636ec;
-        transform: scale(1.03);
-      }
-      .error {
-        color: red;
-        display: none;
-      }
-      #LoginBtn {
-        color: #000000;
-        cursor: pointer;
-        padding: 10px;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: #000000;
-      }
-      #signUpBtn {
-        padding: 10px;
-        color: #4e4e4eec;
-        cursor: pointer;
-      }
-      #slider {
-        padding: 10px;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: #4e4e4eec;
-      }
-    </style>
+    <link rel="stylesheet" href="login1.css" />
   </head>
   <body>
-    <h1 style="cursor: pointer" onclick=" window.location.href = 'home.html';">
+    <header>
+      <h2><span>AMa</span>zon</h2>
+      <div>
+        <a href="file:///D:/ir%20project/products/products.html">shop </a>
+        <a href="">my cart</a>
+        <a href="">about us </a>
+        <a href="">contact us </a>
+        <img
+          src="icons/icons8-dark-mode-16.png"
+          onclick="darkmode()"
+          alt="darkmode"
+        />
+      </div>
+    </header>
+    <!-- <h1 style="cursor: pointer" onclick=" window.location.href = 'home.html';">
       FCIH Login
-    </h1>
+    </h1> -->
     <div id="form">
       <div id="slider">
         <span id="signUpBtn">Sign Up&nbsp;&nbsp;</span>
@@ -128,6 +72,9 @@
     </div>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>
+      var isDark = false;
+      const queryString = window.location.search;
+
       function emailValidation(email) {
         let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
@@ -183,6 +130,7 @@
 
           document.title = "Sign Up";
         });
+        if (queryString === "?signup") $("#signUpBtn").click();
         $("#LoginBtn").click(function () {
           $("#signUp").hide();
           $("#Login").show();
@@ -244,6 +192,18 @@
           }
         });
       });
+
+      function darkmode() {
+        if (isDark) {
+          document.body.style.backgroundColor = "#f2f2f2";
+          document.body.style.color = "black";
+          isDark = false;
+        } else {
+          document.body.style.backgroundColor = "black";
+          document.body.style.color = "white";
+          isDark = true;
+        }
+      }
     </script>
   </body>
 </html>
