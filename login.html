@@ -86,16 +86,25 @@
       <br />
       <form id="signUp" hidden>
         <laber>name:</laber>
-        <input type="text" class="fields" id="name" name="name" /><br /><br />
+        <input type="text" class="fields" id="name" name="name" />
+        <label class="error" id="UserNameError"
+          >the username or password is not correct </label
+        ><br />
         <label>Email:</label>
-        <input type="text" class="fields" id="username" name="username" /><br />
+        <input type="text" class="fields" id="Email" name="Email" /><br />
         <label class="error" id="EmailError"
           >the username or password is not correct </label
         ><br />
 
         <label>Password:</label>
-        <input type="password" class="fields" id="password" name="password" />
-        <label class="error" id="EmailError"
+        <input
+          type="password"
+          class="fields"
+          onkeyup="passwordValidation(this.value)"
+          id="password"
+          name="password"
+        />
+        <label class="error" id="passwordError"
           >the username or password is not correct </label
         ><br />
 
@@ -103,15 +112,10 @@
       </form>
 
       <form id="Login">
-        <label for="username">Email or Phone:</label>
-        <input
-          type="text"
-          class="fields"
-          id="username"
-          name="username"
-        /><br /><br />
+        <label>Email:</label>
+        <input type="text" class="fields" id="Email" name="Email" /><br /><br />
 
-        <label for="password">Password:</label>
+        <label>Password:</label>
         <input
           type="password"
           class="fields"
@@ -134,11 +138,35 @@
         }
       }
       function passwordValidation(password) {
-        let pattern =
-          /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.{8,})$/;
-
-        if (password.match(pattern)) {
+        if (!password.match("(?=.{8,})")) {
+          $("#passwordError").empty();
+          $("#passwordError").append("Password must be at least 8 characters");
+          $("#passwordError").show();
+          return false;
+        } else if (!password.match("(?=.*[0-9])")) {
+          $("#passwordError").empty();
+          $("#passwordError").append("Password must contain a number");
+          $("#passwordError").show();
+          return false;
+        } else if (!password.match("(?=.*[a-z])")) {
+          $("#passwordError").empty();
+          $("#passwordError").append(
+            "Password must contain a lowercase letter"
+          );
+          $("#passwordError").show();
+          return false;
+        } else if (!password.match("(?=.*[A-Z])")) {
+          $("#passwordError").empty();
+          $("#passwordError").append(
+            "Password must contain an uppercase letter"
+          );
+          $("#passwordError").show();
+          return false;
         } else {
+          $("#passwordError").empty();
+
+          $("#passwordError").hide();
+          return true;
         }
       }
 
@@ -169,31 +197,41 @@
         });
 
         $("#signUp").submit(function (event) {
-          event.preventDefault(); // Prevent form submission
-          // Perform form validation here
-          var name = $("#name").val();
-          var username = $("#username").val();
-          var password = $("#password").val();
-          if (name != "" && username != "" && password != "") {
-            window.location.href = "home.html";
+          event.preventDefault();
+          var name = $("#signUp #name").val();
+          var Email = $("#signUp #Email").val();
+          var password = $("#signUp #password").val();
+          if (name === "") {
+            $("#UserNameError").empty();
+            $("#UserNameError").append("Enter a name");
+            $("#UserNameError").show();
+          } else if (name === "") {
+            $("#EmailError").empty();
+            $("#EmailError").append("Enter an email");
+            $("#EmailError").show();
+          } else if (!emailValidation(Email)) {
+            $("#EmailError").empty();
+            $("#EmailError").append("Enter a valid email");
+            $("#EmailError").show();
+          } else if (password === "") {
+            $("#EmailError").empty();
+            $("#EmailError").append("Enter a password");
+            $("#EmailError").show();
+          } else if (!passwordValidation(password)) {
           } else {
-            $("#error").show();
+            window.location.href = "home.html";
           }
         });
         $("#Login").submit(function (event) {
           event.preventDefault();
-          var username = $("#Login #username").val();
+          var Email = $("#Login #Email").val();
           var password = $("#Login #password").val();
 
-          if (username === "" && password === "") {
-            $("#LoginError").empty();
-            $("#LoginError").append("Enter an email and a password");
-            $("#LoginError").show();
-          } else if (username === "") {
+          if (Email === "") {
             $("#LoginError").empty();
             $("#LoginError").append("Enter an email");
             $("#LoginError").show();
-          } else if (!emailValidation(username)) {
+          } else if (!emailValidation(Email)) {
             $("#LoginError").empty();
             $("#LoginError").append("Enter a valid email");
             $("#LoginError").show();
