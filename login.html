@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Log In</title>
-    <link rel="stylesheet" href="login1.css" />
+    <link rel="stylesheet" href="login.css" />
   </head>
   <body>
     <header>
@@ -73,7 +73,40 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>
       var isDark = false;
+      var selectedColor = "black";
+      var notsel = "#4e4e4eec";
       const queryString = window.location.search;
+
+      function darkmode() {
+        if (isDark) {
+          document.body.style.backgroundColor = "#f2f2f2";
+          document.body.style.color = "black";
+          $("header").css("background-color", "black");
+          $("#form").css("background-color", "white");
+          $("#form label").css("color", "black");
+          $(".fields").css("background-color", "white");
+          selectedColor = "black";
+          notsel = "#4e4e4eec";
+          isDark = false;
+        } else {
+          document.body.style.backgroundColor = "black";
+          document.body.style.color = "white";
+          $("header").css("background-color", "#292929");
+          $("#form").css("background-color", "#292929");
+          $("#form label").css("color", "white");
+          $(".fields").css("background-color", "#292929");
+          $(".fields").css("color", "white");
+          selectedColor = "white";
+          notsel = "#adadad";
+          isDark = true;
+        }
+        document.cookie = "isDark=" + isDark;
+        if (document.title != "Log In") {
+          $("#signUpBtn").click();
+        } else {
+          $("#LoginBtn").click();
+        }
+      }
 
       function emailValidation(email) {
         let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
@@ -121,23 +154,24 @@
         $("#signUpBtn").click(function () {
           $("#signUp").show();
           $("#Login").hide();
-          $("#LoginBtn").css("color", "#4e4e4eec");
+          $("#LoginBtn").css("color", notsel);
           $("#LoginBtn").css("border-bottom", "none");
-          this.style.color = "#000000";
-          this.style.borderBottomColor = "#000000";
+          this.style.color = selectedColor;
+          this.style.borderBottomColor = selectedColor;
           this.style.borderBottomWidth = "1px";
           this.style.borderBottomStyle = "solid";
 
           document.title = "Sign Up";
         });
         if (queryString === "?signup") $("#signUpBtn").click();
+
         $("#LoginBtn").click(function () {
           $("#signUp").hide();
           $("#Login").show();
-          $("#signUpBtn").css("color", "#4e4e4eec");
+          $("#signUpBtn").css("color", notsel);
           $("#signUpBtn").css("border-bottom", "none");
-          this.style.color = "#000000";
-          this.style.borderBottomColor = "#000000";
+          this.style.color = selectedColor;
+          this.style.borderBottomColor = selectedColor;
           this.style.borderBottomWidth = "1px";
           this.style.borderBottomStyle = "solid";
 
@@ -191,19 +225,8 @@
             window.location.href = "home.html";
           }
         });
+        if (document.cookie.includes("isDark=true")) darkmode();
       });
-
-      function darkmode() {
-        if (isDark) {
-          document.body.style.backgroundColor = "#f2f2f2";
-          document.body.style.color = "black";
-          isDark = false;
-        } else {
-          document.body.style.backgroundColor = "black";
-          document.body.style.color = "white";
-          isDark = true;
-        }
-      }
     </script>
   </body>
 </html>

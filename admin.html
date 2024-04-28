@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Page</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 15%;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+      }
+      .navbar h1 {
+        padding: 8px 16px;
+        background-color: #555;
+        color: white;
+        text-align: center;
+        margin-top: 0;
+      }
+      ul li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+
+      li a.active {
+        background-color: #c1b619;
+        color: white;
+      }
+
+      li a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+      }
+      .navbar span {
+        color: #c1b619;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li>
+          <h1><span>AMa</span>zon</h1>
+        </li>
+        <li><a href="#" class="active">Overview</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <div class="dashboard">
+        <!-- Admin content goes here -->
+      </div>
+    </main>
+  </body>
+</html>

@@ -32,6 +32,9 @@ header a:hover {
     color: yellow;
     font-size: 20px;
 } 
+header span{
+  color: yellow;
+}
   h1 {
     text-align: center;
     color: #f0af23ec;
