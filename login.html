@@ -201,7 +201,7 @@
             $("#EmailError").show();
           } else if (!passwordValidation(password)) {
           } else {
-            window.location.href = "home.html";
+            window.location.href = "admin.html";
           }
         });
         $("#Login").submit(function (event) {
@@ -222,7 +222,7 @@
             $("#LoginError").append("Enter a password");
             $("#LoginError").show();
           } else {
-            window.location.href = "home.html";
+            window.location.href = "admin.html";
           }
         });
         if (document.cookie.includes("isDark=true")) darkmode();

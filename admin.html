@@ -3,8 +3,16 @@
   <head>
     <title>Admin Page</title>
     <style>
+      @font-face {
+        font-family: "Open Sans";
+        src: url("fonts/OpenSans-VariableFont_wdth,wght.ttf");
+      }
+
       body {
+        font-family: "Open Sans", sans-serif;
+
         margin: 0;
+        background-color: #fff7d4;
       }
 
       ul {
@@ -12,14 +20,14 @@
         margin: 0;
         padding: 0;
         width: 15%;
-        background-color: #f1f1f1;
+        background-color: #ffec9e;
         position: fixed;
         height: 100%;
         overflow: auto;
       }
       .navbar h1 {
         padding: 8px 16px;
-        background-color: #555;
+        background-color: #4c3d3d;
         color: white;
         text-align: center;
         margin-top: 0;
@@ -38,7 +46,7 @@
       }
 
       li a:hover:not(.active) {
-        background-color: #555;
+        background-color: #4c3d3d;
         color: white;
       }
       .navbar span {
@@ -54,7 +62,7 @@
         padding: 1px 16px;
       }
       #dash-header {
-        background-color: #555;
+        background-color: #4c3d3d;
         color: white;
         padding: 10px;
         margin-top: 0;
@@ -68,8 +76,9 @@
       #dash-content {
         margin-top: 16px;
         padding: 10px;
-        border: 1px solid #555;
+        border: 1px solid #4c3d3d;
         border-radius: 6px;
+        background-color: #ffec9e;
       }
 
       #ProductTable {
@@ -105,6 +114,38 @@
       #ProductTable tbody tr:last-of-type {
         border-bottom: 2px solid #c1b619;
       }
+
+      #dash-details {
+        margin-top: 16px;
+        padding: 10px;
+        border: 1px solid #4c3d3d;
+        border-radius: 6px;
+        background-color: #ffec9e;
+      }
+      #dash-content img {
+        height: 20px;
+        width: 20px;
+        padding: 5px;
+        border-radius: 20%;
+      }
+      #dash-content img:hover {
+        background-color: #ffd95a;
+      }
+      #dash-content img:active {
+        background-color: #c07f00;
+      }
+
+      .card {
+        display: inline-block;
+        vertical-align: top;
+        height: auto;
+        min-height: 100px;
+        padding: 15px 25px;
+        box-sizing: border-box;
+        border-radius: 10%;
+        background: #fff7d4;
+        width: 24%;
+      }
     </style>
   </head>
   <body>
@@ -130,6 +171,26 @@
           />
           <span> Admin Page</span>
         </div>
+        <div id="dash-details">
+          <h1>Overview</h1>
+
+          <div class="card">
+            <h3>total income</h3>
+            <p>5,060$</p>
+          </div>
+          <div class="card">
+            <h3>total expences</h3>
+            <p>520$</p>
+          </div>
+          <div class="card">
+            <h3>total sales (this month)</h3>
+            <p>60</p>
+          </div>
+          <div class="card">
+            <h3>net profit</h3>
+            <p>4,540$</p>
+          </div>
+        </div>
         <div id="dash-content">
           <h1>products</h1>
           <table id="ProductTable">
@@ -140,69 +201,99 @@
                 <th>Price</th>
                 <th>Stock</th>
                 <th>Category</th>
-                <th>#</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Product 1 -->
               <tr>
                 <td>1</td>
                 <td>Stylish Shirt</td>
                 <td>$29.99</td>
                 <td>15</td>
                 <td>Apparel</td>
-                <td><button>Add to Cart</button></td>
+                <td>
+                  <img src="icons/pencil.png" /><img
+                    class="delete"
+                    src="icons/trash.png"
+                  />
+                </td>
               </tr>
-              <!-- Product 2 -->
+
               <tr>
                 <td>2</td>
                 <td>Elegant Dress</td>
                 <td>$49.99</td>
                 <td>20</td>
                 <td>Apparel</td>
-                <td><button>Add to Cart</button></td>
+                <td>
+                  <img src="icons/pencil.png" /><img
+                    class="delete"
+                    src="icons/trash.png"
+                  />
+                </td>
               </tr>
-              <!-- Product 3 -->
+
               <tr>
                 <td>3</td>
                 <td>Classic Watch</td>
                 <td>$99.99</td>
                 <td>25</td>
                 <td>Accessories</td>
-                <td><button>Add to Cart</button></td>
+                <td>
+                  <img src="icons/pencil.png" /><img
+                    class="delete"
+                    src="icons/trash.png"
+                  />
+                </td>
               </tr>
-              <!-- Product 4 -->
+
               <tr>
                 <td>4</td>
                 <td>Smartphone</td>
                 <td>$399.99</td>
                 <td>30</td>
                 <td>Electronics</td>
-                <td><button>Add to Cart</button></td>
+                <td>
+                  <img src="icons/pencil.png" /><img
+                    class="delete"
+                    src="icons/trash.png"
+                  />
+                </td>
               </tr>
-              <!-- Product 5 -->
+
               <tr>
                 <td>5</td>
                 <td>Laptop</td>
                 <td>$899.99</td>
                 <td>25</td>
                 <td>Electronics</td>
-                <td><button>Add to Cart</button></td>
+                <td>
+                  <img src="icons/pencil.png" /><img
+                    class="delete"
+                    src="icons/trash.png"
+                  />
+                </td>
               </tr>
-              <!-- Product 6 -->
+
               <tr>
                 <td>6</td>
                 <td>Sneakers</td>
                 <td>$59.99</td>
                 <td>15</td>
                 <td>Footwear</td>
-                <td><button>Add to Cart</button></td>
+                <td>
+                  <img src="icons/pencil.png" /><img
+                    class="delete"
+                    src="icons/trash.png"
+                  />
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </main>
+
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>
       isCollapsed = false;
@@ -217,6 +308,11 @@
           isCollapsed = true;
         }
       }
+      $(".delete").click(function () {
+        if (window.confirm("Are you sure?")) {
+          $(this).closest("tr").remove();
+        }
+      });
     </script>
   </body>
 </html>
