@@ -1,0 +1,158 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bo {
+            background-color: rgb(45, 44, 44);
+        }
+
+        .h_1 {
+            color: maroon;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+        }
+
+        .h_1_p2 {
+            color: rgb(167, 123, 11);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+        }
+
+        .h_2 {
+            color: blueviolet;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-style: italic;
+        }
+
+        .h_3 {
+            color: red(175, 0, 0);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            /* font: italic; */
+        }
+
+        .h_4 {
+            color: antiquewhite;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+        }
+
+        .h_5 {
+            color: rgb(255, 255, 255);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            /* font-style: italic; */
+        }
+
+        .h_6 {
+            color: rgb(255, 255, 255);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+        }
+
+        .pa {
+            color: rgb(255, 255, 255);
+            font-size: 15px;
+        }
+
+        .dv {
+            background-color: rgba(43, 42, 42, 0.806);
+            border-radius: 20px;
+            box-shadow: hsla(0, 0%, 100%, 0.150) 3px;
+        }
+
+        .mg {
+            border-radius: 20px;
+            margin-top: 2%;
+            width: 90%;
+            height: 95%;
+            box-shadow: 10px rgb(255, 255, 255);
+
+        }
+
+        .a_link {
+            font: italic;
+            color: rgb(216, 159, 72);
+        }
+    </style>
+</head>
+
+
+<body id="bo_1">
+    <button id="myButton" onclick="toggleChanges()">Light Mode</button>
+    <div id="dv_1" style="width: 300px; height: 300px; display: block; ">
+        <img src="1.jpg" alt="Denim Jeans" id="mg_1" style="width: 100%; height: 100%;">
+        <div>
+            <h1 id="h_1_1"> <span>Tailored Jeans</span> </h1>
+            <p id="pa_1">$19.99</p>
+            <div>
+                <p id="pa_1">
+                    Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim
+                    loremjeansum.
+
+                </p>
+            </div>
+            <p><button>Add to Cart</button></p>
+        </div>
+
+
+
+</body>
+
+</html>
+<script>
+
+    var changed = false;
+
+    function toggleChanges() {
+        if (changed) {
+            removeChanges();
+        } else {
+            applyChanges();
+        }
+    }
+
+    function applyChanges() {
+        // Apply changes to the button or any other elements
+        var bod, h_1, pa, dv, mg;
+        bod = document.getElementById("bo_1");
+        h_1 = document.getElementById("h_1_1");
+        pa = document.getElementById("pa_1");
+        dv = document.getElementById("dv_1");
+        mg = document.getElementById("mg_1");
+
+        bod.classList.add("bo");
+        h_1.classList.add("h_1");
+        pa.classList.add("pa");
+        dv.classList.add("dv");
+        mg.classList.add("mg");
+
+
+        // document.getElementById("myButton").style.backgroundColor = "blue";
+        document.getElementById("myButton").textContent = "Dark Mode";
+        // Set changed to true
+        changed = true;
+    }
+
+    function removeChanges() {
+        // Remove changes from the button or any other elements
+        var bod, h_1, pa, dv, mg;
+        bod = document.getElementById("bo_1");
+        h_1 = document.getElementById("h_1_1");
+        pa = document.getElementById("pa_1");
+        dv = document.getElementById("dv_1");
+        mg = document.getElementById("mg_1");
+
+        bod.classList.remove("bo");
+        h_1.classList.remove("h_1");
+        pa.classList.remove("pa");
+        dv.classList.remove("dv");
+        mg.classList.remove("mg");
+
+        // document.getElementById("myButton").style.backgroundColor = "";
+        document.getElementById("myButton").textContent = "Lidht Mode";
+        // Set changed to false
+        changed = false;
+    }
+</script>

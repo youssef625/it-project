@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <img
+          src="icons/icons8-dark-mode-16.png"
+          onclick="darkmode()"
+          alt="darkmode"
+        />
+
+    <div class="container">
+    <div class="form">
+        <form action="https://formspree.io/f/mjvnpkvy" method="post">
+<h1>contact us </h1> 
+<input type="text" name="" id="firstName" placeholder="First Name" required>
+<input type="text" name="" id="last Name" placeholder="last Name" required>
+<input type="email" name="" id="email" placeholder="email" required>
+
+<h4>type your massege here.....</h4>
+<textarea id="textarea" name="textarea" rows="8" cols="94"></textarea>
+<button type="submit">submit</button>
+
+</form>
+</div>
+
+
+
+    </div>
+
+
+    <script>
+        function darkmode() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        </script>
+
+</body>
+</html>
