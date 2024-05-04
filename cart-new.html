@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+        .dark-mode {
+            background-color: black;
+            color: white
+        }
+
+
+
+        body {
+            /* background-image: url('5_3_2024 8_48_09 PM.png');
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            background-repeat: no-repeat; */
+            color: rgb(216, 216, 46);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        .cart-page {
+            margin-top: 100px;
+            margin-right: 150px;
+            margin-bottom: 120px;
+            margin-left: 150px;
+        }
+
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            /* background-color: #FFF7D4 */
+            /*not a double border*/
+        }
+
+        .table-one table,
+        .table-one th,
+        .table-one td {
+
+            border: 2px solid black;
+        }
+
+        .table-one th:first-child {
+            width: 65%;
+        }
+
+        .table-one th:nth-child(2) {
+            width: 50%;
+        }
+
+        .cart-info {
+            display: flex;
+            flex-wrap: wrap;
+            /*خلي الكلام عاليمين*/
+        }
+
+        th {
+            text-align: left;
+            padding: 5px;
+            color: rgba(255, 255, 255, 0.953);
+            background: rgb(216, 216, 46);
+        }
+
+        td {
+            padding: 10px 5px;
+        }
+
+        td input {
+            width: 45px;
+            height: 20px;
+            padding: 5px;
+        }
+
+        td a {
+            color: rgb(241, 30, 10);
+            font-size: 13px;
+        }
+
+
+        .total-price {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .total-price table,
+        .total-price th,
+        .total-price td {
+            border: 2px solid black;
+            width: 100%;
+            max-width: 359px;
+        }
+
+        td:last-child {
+            text-align: right;
+        }
+
+        th:last-child {
+            text-align: right;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        * {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            box-sizing: border-box;
+            /* to justfy margin and padding in fixed  */
+            margin: 0%;
+            padding: 0%;
+            /* to resit sizing  */
+        }
+
+        header {
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            /* x axis */
+            align-items: center;
+            /* y axis */
+            background-color: black;
+            color: white;
+            padding: 0px 100px;
+            /* to move content in container  */
+            border-top: 2px solid yellow;
+            position: fixed;
+            /* to fixed postion of nav bar */
+            width: 100%;
+            /* to fixed postion of nav bar */
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        span {
+            color: rgb(216, 216, 46);
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 18px;
+            /*for font sizing*/
+            transition: ease 1s;
+        }
+
+        /* transtion */
+        header a:hover {
+            color: yellow;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2><span>AMa</span>zon</h2>
+        <div>
+
+            <a href="file:///D:/ir%20project/products/products.html">shop </a>
+            <a href="">my cart</a>
+            <a href="">about us </a>
+            <a href="">contact us </a>
+            <img src="icons8-dark-mode-16.png" onclick="myFunction()" alt="darkmode" />
+        </div>
+    </header>
+    <div class="small container cart-page">
+        <div class="table-one">
+
+            <table>
+                <tr>
+                    <th>product</th>
+                    <th>quantity</th>
+                    <th>total</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="e0d643e5-05bc-4249-833b-0ddf80440f851689274793057BULLMERMenBeigePrintedV-NeckPocketsT-shirt1.avif"
+                                alt="t sirt" style="width: 90px;height: 80px;margin-right: 10px;">
+                            <div>
+                                <P>oversize T-sirt</P>
+                                <a>Remove</a>
+                            </div>
+                        </div>
+
+                    </td>
+                    <td><input type="number" value="1" min="0"></td>
+                    <td>30$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="Apple-Watch-Ultra-2-hero-230912.jpg.og.jpg" alt="t sirt"
+                                style="width: 90px;height: 80px;margin-right: 10px;">
+                            <div>
+                                <P>Apple Watch Ultra 2 hero</P>
+                                <a>Remove</a>
+
+                            </div>
+                        </div>
+
+                    </td>
+                    <td><input type="number" value="1" min="0"></td>
+                    <td>20$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="613z1j7fUML._AC_SL1500_.jpg" alt="t sirt"
+                                style="width: 90px;height: 80px;margin-right: 10px;">
+                            <div>
+                                <P>Cargo Pants for Men Solid Casual</P>
+                                <a>Remove</a>
+                            </div>
+                        </div>
+
+                    </td>
+                    <td><input type="number" value="1" min="0"></td>
+                    <td>60$</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>subtotal</td>
+                    <td>110$</td>
+                </tr>
+                <tr>
+                    <td>tax</td>
+                    <td>5$</td>
+                </tr>
+                <tr>
+                    <td>total</td>
+                    <td>115$</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
