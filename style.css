@@ -1,0 +1,125 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color:#e1e3e1;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: auto;
+    padding: 0 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  }
+  
+  .header {
+    background: #000; /* Black background */
+    color: #ffd700; /* Yellow text */
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .navigation {
+    background: #ffd700; /* Yellow background */
+    color: #000000; /* Black text */
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+  .navigation a {
+    color: #000000; /* Black text */
+    text-decoration: none;
+    font-size: 24px;
+  }
+  
+  .account-details {
+    background: #fff; /* White background */
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #000; /* Black border */
+  }
+  
+  .account-details h2 {
+    color: #000; /* Black text */
+    margin-bottom: 10px;
+  }
+  
+  .account-details p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  
+  .footer {
+    background: #000; /* Black background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 10px 0;
+  }
+  .button-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .btn {
+    background-color: #ffd700; /* Yellow background */
+    color: #000; /* Black text */
+    border: 1px solid #000; /* Black border */
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #fff; /* White background on hover */
+    color: #000; /* Black text on hover */
+  }
+  /* Dark mode styles */
+body.dark-mode {
+    background-color: #333; /* Dark background for dark mode */
+    color: #f1f1f1; /* Light text for dark mode */
+  }
+  
+  body.dark-mode .container {
+    background-color: rgba(0, 0, 0, 0.8); 
+  }
+  
+  body.dark-mode .header,
+  body.dark-mode .footer,
+  body.dark-mode .navigation {
+    background: #222; /* Darker background for header, footer, and navigation */
+  }
+  
+  body.dark-mode .navigation a,
+  body.dark-mode .footer,
+  body.dark-mode .header h1{
+    color: #ffd700; /* Yellow text for contrast */
+  }
+  
+  body.dark-mode .btn {
+    background-color: #444; /* Dark background for buttons */
+    color: #ffd700; /* Yellow text for buttons */
+  }
+  
+  body.dark-mode .btn:hover {
+    background-color: #555; /* Lighter dark background for buttons on hover */
+  }
+
+body.dark-mode .account-details p {
+  color: #000; /* Keeps the text color black in dark mode */
+}
+  
+  
