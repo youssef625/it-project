@@ -40,3 +40,36 @@ span {
     text-align: left; 
 }
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;/* x axis */
+    align-items: center;/* y axis */
+    background-color: black;
+    color: white;
+    padding: 0px 100px; /* to move content in container  */
+    border-top: 2px solid yellow;
+    width: 100%;/* to fixed postion of nav bar */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    box-sizing: border-box;
+    height: 50px;
+}
+header a {color: white;  
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 18px;/*for font sizing*/
+    transition: ease 1s;
+    }
+    /* transtion */
+header a:hover {
+    color: yellow;
+    font-size: 20px;
+} 
+header span{
+  color: yellow;
+}
