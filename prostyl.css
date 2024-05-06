@@ -43,6 +43,34 @@ header a:hover {
     background-color: black;
     color: white;
   }
+/*-----------------------------------------*/
+.search button {
+    color: rgb(255, 255, 255);
+    background-color: yellow;
+    border-radius: 8px;
+    border-color: yellow;
+    border: none;
+    font-size: 18px;
+    width: 80px;
+    
+    
+    transition: ease 1s;
+    }
+    .search button:hover {
+        color: yellow;
+        background-color: rgb(255, 255, 255);
+        font-size: 20px;
+      }
+      
+    
+    .search input {
+   
+        border-radius: 8px;
+        border: none;
+        font-size: 18px;
+    
+    }
+/*--------------------------------------------------------------*/
 
 body {
     background-color: #ffffff;
@@ -51,7 +79,7 @@ body {
     display: flex;
     justify-content: center;
    flex-wrap: wrap;
-    margin-top: 0px;
+ 
     
 }
 .card {
