@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    background: linear-gradient(#464646f6, #f1ed03dc 50%);
+    justify-content: center;
+    align-items: center;
+    background-color: #242424;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.reference-page {
+    width: 70%;
+    background-color: #6e6d6d;
+    overflow-y: auto;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.opinions {
+    padding: 20px;
+    color: white;
+}
+
+/* ============================================================== */
+.container {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    margin-top: 5px;
+   
+}
+
+.iframe-container {
+    width: 30%;
+    height: 100%;
+    display: flex;justify-content: center;
+    
+    align-items: center;
+    
+}
+
+.iframe-square {
+    background-color: #242424;
+    border-radius: 20px;
+    width: 100%;
+    
+    height: 100%;
+  
+    overflow: hidden;
+    position: relative;
+}
+
+.iframe-square iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
