@@ -43,7 +43,7 @@
 <div class="card">
  <img src="./RedStore_Img/images/1.jpg" alt="Denim Jeans" style="width:100%">
  <div class="cardcontain">
-  <h1>red Teshirt</h1>
+  <h1>red T-shirt</h1>
   <p class="price">$19.99</p>
   <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
   <p><button>Add to Cart</button></p>
@@ -180,6 +180,41 @@
      var element = document.body;
      element.classList.toggle("dark-mode");
   }
+  const queryString = window.location.search;
+  const params = new URLSearchParams(queryString);
+
+  const q = params.get("search");
+  console.log(q);
+
+  const cards = document.querySelectorAll(".card");
+  
+  cards.forEach((card) => {
+    text = card.querySelector("h1").innerText;
+    if (text.toLowerCase().includes(q.toLowerCase())) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+
+  });
+
+
+  function search() {
+    const input = document.querySelector(".search input");
+    const value = input.value;
+    window.location.href = `products.html?search=${value}`;
+  }
+
+  document.querySelector(".search button").addEventListener("click", search);
+document.querySelector(".search input").addEventListener("keypress", function(event) {
+  
+  if (event.key === "Enter") {
+    
+    search();
+  }
+}); 
+  
+  
   </script>
 
 
