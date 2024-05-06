@@ -100,3 +100,29 @@ header span{
     border-bottom-style: solid;
     border-bottom-color: #4e4e4eec;
   }
+  .search button {
+    color: rgb(255, 255, 255);
+    background-color: yellow;
+    border-radius: 8px;
+    border-color: yellow;
+    border: none;
+    font-size: 18px;
+    width: 80px;
+    
+    transition: ease 1s;
+    }
+    .search button:hover {
+        color: yellow;
+        background-color: rgb(255, 255, 255);
+        font-size: 20px;
+      }
+      
+    
+    .search input {
+        color: rgb(255, 255, 255);
+        border-radius: 8px;
+        border: none;
+        font-size: 18px;
+    
+    }
+    
