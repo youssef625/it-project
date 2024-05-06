@@ -187,16 +187,26 @@
   console.log(q);
 
   const cards = document.querySelectorAll(".card");
-  
+  var noresult = true;
   cards.forEach((card) => {
     text = card.querySelector("h1").innerText;
     if (text.toLowerCase().includes(q.toLowerCase())) {
       card.style.display = "block";
+      noresult = false;
     } else {
       card.style.display = "none";
     }
 
   });
+
+  if (noresult) {
+    const container = document.querySelector(".container");
+    const h1 = document.createElement("h1");
+    h1.innerText = "No result found";
+    h1.style.textAlign = "center";
+    h1.style.marginTop = "100px";
+    container.appendChild(h1);
+  }
 
 
   function search() {
