@@ -1,0 +1,42 @@
+body {
+    background-color: #808080; 
+    color: #333; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    line-height: 1.7; 
+    padding: 20px; /* Padding for spacing around the content */
+}
+
+h1, h2 {
+    color: #fff; /* White color for headings */
+    text-align: center;
+    margin-bottom: 30px; /* More space below the headings */
+}
+
+span {
+    color: #ffd700;
+}
+
+#demo {
+    display: block;
+    margin: 20px auto; 
+    text-align: center;
+    max-width: 750px;
+    padding: 25px; 
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+/* Styling for the team names */
+.team-names {
+    color: #555; 
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    margin: 20px auto; 
+    max-width: 700px; 
+    border: 1px solid #ddd; /* Adding a border to match #demo */
+    list-style: none; /* Removing default list styling */
+    text-align: left; 
+}
+
