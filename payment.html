@@ -1,225 +1,93 @@
 <!DOCTYPE html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>payment</title>
-    <style>
-        .dark-mode {
-            background-color: black;
-            color: white
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>payment</title>
+  <link rel="stylesheet" href="payment2.css" />
 
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-        * {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            box-sizing: border-box;
-            /* to justfy margin and padding in fixed  */
-            margin: 0%;
-            padding: 0%;
-            /* to resit sizing  */
-        }
-
-        header {
-            top: 0;
-            display: flex;
-            justify-content: space-between;
-            /* x axis */
-            align-items: center;
-            /* y axis */
-            background-color: black;
-            color: white;
-            padding: 0px 100px;
-            /* to move content in container  */
-            border-top: 2px solid yellow;
-            position: fixed;
-            /* to fixed postion of nav bar */
-            width: 100%;
-            /* to fixed postion of nav bar */
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-
-        span {
-            color: rgb(216, 216, 46);
-        }
-
-        header a {
-            color: white;
-            text-decoration: none;
-            margin-right: 15px;
-            font-size: 18px;
-            /*for font sizing*/
-            transition: ease 1s;
-        }
-
-        /* transtion */
-        header a:hover {
-            color: yellow;
-            font-size: 20px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgb(216, 216, 46);
-        }
-
-        .container {
-            width: 750px;
-            height: 450px;
-            border: 3px solid;
-            display: flex;
-            flex-direction: column;
-            padding: 40px;
-            justify-content: space-around;
-            margin-top: 40px;
-        }
-
-        .container h1 {
-            text-align: center;
-        }
-
-
-        .first-row {
-            display: flex;
-        }
-
-        .owner {
-            width: 100%;
-            margin-right: 40px;
-        }
-
-        .input-field {
-            border: 1px solid #999;
-        }
-
-        .input-field input {
-            width: 100%;
-            border: none;
-            outline: none;
-            padding: 10px;
-        }
-
-        .selection {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cards img {
-            width: 100px;
-        }
-
-        .selection select {
-            padding: 10px 10px;
-        }
-
-        .container a {
-            background-color: blueviolet;
-            color: white;
-            text-align: center;
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 7px;
-            margin-top: 20px;
-            font-size: 15px;
-            transition: 0.5s;
-        }
-
-        .container a:hover {
-            background-color: rgb(216, 216, 46);
-        }
-    </style>
-
-<body>
+  <body>
     <header>
-        <h2><span>AMa</span>zon</h2>
-        <div>
-
-            <a href="file:///D:/ir%20project/products/products.html">shop </a>
-            <a href="">my cart</a>
-            <a href="">about us </a>
-            <a href="">contact us </a>
-            <img src="icons8-dark-mode-16.png" onclick="myFunction()" alt="darkmode" />
-        </div>
+      <h2><span>AMa</span>zon</h2>
+      <div>
+        <a href="/products.html">shop </a>
+        <a href="/cart.html">my cart</a>
+        <a href="/aboutus.html">about us </a>
+        <a href="/contactus.html">contact us </a>
+        <a href="login.html">login</a>
+        <img
+          src="icons8-dark-mode-16.png"
+          onclick="myFunction()"
+          alt="darkmode"
+        />
+      </div>
     </header>
     <div class="container">
-        <h1>confirm your payment</h1>
-        <div class="first-row">
-            <div class="owner">
-                <h3>owner</h3>
-                <div class="input-field">
-                    <input type="text">
-                </div>
-            </div>
-            <div class="cvv">
-                <h3>cvv</h3>
-                <div class="input-field">
-                    <input type="password">
-                </div>
-            </div>
+      <h1>confirm your payment</h1>
+      <div class="first-row">
+        <div class="owner">
+          <h3>owner</h3>
+          <div class="input-field">
+            <input type="text" />
+          </div>
         </div>
-        <div class="second-row">
-            <div class="card-number">
-                <h3>card number</h3>
-                <div class="input-field">
-                    <input type="text">
-                </div>
-            </div>
+        <div class="cvv">
+          <h3>cvv</h3>
+          <div class="input-field">
+            <input type="password" />
+          </div>
         </div>
-        <div class="third-row">
-            <h3>expire date</h3>
-            <div class="selection">
-                <div class="date">
-                    <select name="months" id="months">
-                        <option value="Jan">Jan</option>
-                        <option value="Feb">Feb</option>
-                        <option value="Mar">Mar</option>
-                        <option value="Apr">Apr</option>
-                        <option value="May">May</option>
-                        <option value="Jun">Jun</option>
-                        <option value="Jul">Jul</option>
-                        <option value="Aug">Aug</option>
-                        <option value="Sep">Sep</option>
-                        <option value="Oct">Oct</option>
-                        <option value="Nov">Nov</option>
-                        <option value="Dec">Dec</option>
-                    </select>
-                    <select name="years" id="years">
-                        <option value="2020">2024</option>
-                        <option value="2019">2025</option>
-                        <option value="2018">2026</option>
-                        <option value="2017">2027</option>
-                        <option value="2016">2028</option>
-                        <option value="2015">2029</option>
-                    </select>
-                </div>
-                <div class="cards">
-                    <img src="vi.png" alt="">
-                    <img src="pp.png" alt="">
-                    <img src="mc.png" alt="">
-                </div>
-            </div>
+      </div>
+      <div class="second-row">
+        <div class="card-number">
+          <h3>card number</h3>
+          <div class="input-field">
+            <input type="text" />
+          </div>
         </div>
-        <a href="">confirm</a>
+      </div>
+      <div class="third-row">
+        <h3>expire date</h3>
+        <div class="selection">
+          <div class="date">
+            <select name="months" id="months">
+              <option value="Jan">Jan</option>
+              <option value="Feb">Feb</option>
+              <option value="Mar">Mar</option>
+              <option value="Apr">Apr</option>
+              <option value="May">May</option>
+              <option value="Jun">Jun</option>
+              <option value="Jul">Jul</option>
+              <option value="Aug">Aug</option>
+              <option value="Sep">Sep</option>
+              <option value="Oct">Oct</option>
+              <option value="Nov">Nov</option>
+              <option value="Dec">Dec</option>
+            </select>
+            <select name="years" id="years">
+              <option value="2020">2024</option>
+              <option value="2019">2025</option>
+              <option value="2018">2026</option>
+              <option value="2017">2027</option>
+              <option value="2016">2028</option>
+              <option value="2015">2029</option>
+            </select>
+          </div>
+          <div class="cards">
+            <img src="vi.png" alt="" />
+            <img src="pp.png" alt="" />
+            <img src="mc.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <a href="">confirm</a>
     </div>
 
-
     <script>
-        function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-        }
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+      }
     </script>
-</body>
+  </body>
+</head>
